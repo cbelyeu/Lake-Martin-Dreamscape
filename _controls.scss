@@ -1,0 +1,97 @@
+:root {
+    --title-color: var(--ice-blue);
+    --button-color: var(--india-green);
+}
+
+.title {
+    color: var(--title-color);
+    text-align: center;
+    font-size: 5vw;
+}
+
+button {
+    margin: auto;
+    background-color: var(--button-color);
+    color: var(--title-color);
+    border-radius: 5px;
+    border: none;
+    padding: 6px;
+    width: min-content;
+    font-weight: bold;
+  }
+
+#time_change {
+    float: right;
+}
+.control_bar {
+    display: flex;
+    padding: 1em;
+    position: sticky;
+    bottom: 0px;
+    background-color: var(--translucent);
+}
+
+.cardbox, .card {
+    border: 3px solid var(--title-color);
+    border-radius: 5vw;
+}
+.cardbox {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 1.4em;
+    padding: 1em;
+    background-color: var(--dilute-white);
+}
+.card {
+    max-height: 100vw;
+    margin: 0.7em;
+    overflow: hidden;
+    position: relative;
+    img {
+        width: 100%;
+        margin-bottom: -5px;
+    }
+}
+.productText {
+    position: absolute;
+    width: 90%;
+    bottom: 0px;
+    background-color: var(--translucent);
+    color: var(--button-color);
+    padding: 10px 20px;
+}
+
+@media only screen and (min-width:600px) {
+    .control_bar {
+        position: relative;
+        background-color: transparent;
+    }
+    .cardbox, .card {
+        border-radius: 20px;
+    }
+    .cardbox {
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: 0px;
+    }
+    .card {
+        max-height: 50vw;
+    }
+}
+
+@media only screen and (min-width:768px) {
+    .cardbox {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .card {
+        max-height: 30vw;
+    }
+}
+
+@media only screen and (min-width:992px) {
+    .cardbox {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .card {
+        max-height: 20vw;
+    }
+}

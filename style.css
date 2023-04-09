@@ -1,0 +1,264 @@
+:root {
+  --bright-blue: #4A8FE7;
+  --egg-blue: #59D2FE;
+  --aqua-blue: #44E5E7;
+  --ice-blue: #EAF6FF;
+  --zenith: var(--bright-blue);
+  --crown-sky: var(--egg-blue);
+  --middling-sky: var(--aqua-blue);
+  --bottom-sky: var(--ice-blue);
+  --skyblack: #232528;
+  --nightblue: #2A2A72;
+  --cornflower:#1E3888;
+  --skyblue: #4A8FE7;
+  --violetblue:#8332AC;
+  --skypurple: #E086D3;
+  --dull-pink: #E5C2C0;
+  --mistyrose: #F2D1C9;
+  --bright-pink: #FFA0AC;
+  --candypink: #DB6C79;
+  --tangerine: #F09D58;
+}
+
+:root {
+  --dark-plant: #0C8346;
+  --india-green: #358600;
+  --plant: #329F5B;
+  --bud-green: #8CDB4A;
+  --vivid-plant: #2BC016;
+  --rich-plant: #29B541;
+  --water-plant: #26A96C;
+  --plant-bud: #5FAD56;
+}
+
+.flower {
+  margin: 50px;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  transform: rotate(45deg);
+  --color: var(--bright-pink);
+}
+.flower__center {
+  display: block;
+  height: 50px;
+  width: 50px;
+  border-radius: 10% 80px 25px 80px;
+  transform-origin: bottom right;
+  opacity: 0.9;
+  content: "";
+  background: var(--color);
+  position: absolute;
+  transform: rotate(-22.5deg);
+}
+.flower__center::before {
+  display: block;
+  height: 50px;
+  width: 50px;
+  border-radius: 10% 80px 25px 80px;
+  transform-origin: bottom right;
+  opacity: 0.9;
+  content: "";
+  background: var(--color);
+  transform: rotate(45deg);
+}
+.flower__petal {
+  position: absolute;
+  background: var(--color);
+  display: block;
+  height: 50px;
+  width: 50px;
+  border-radius: 10% 80px 25px 80px;
+  transform-origin: bottom right;
+  opacity: 0.9;
+  content: "";
+}
+.flower__petal::before, .flower__petal::after {
+  background: var(--color);
+  transform: rotate(-45deg);
+  display: block;
+  height: 50px;
+  width: 50px;
+  border-radius: 10% 80px 25px 80px;
+  transform-origin: bottom right;
+  opacity: 0.9;
+  content: "";
+  position: absolute;
+  animation: blooming 10s ease-in-out infinite;
+}
+.flower__petal::after {
+  transform: rotate(45deg);
+}
+.flower .pausable::before, .flower .pausable::after {
+  animation-play-state: paused;
+}
+
+@keyframes blooming {
+  50% {
+    transform: rotate(0);
+  }
+}
+:root {
+  --bioluminous: #F8FFE5;
+  --preferred-white: #FDFFFC;
+  --translucent: rgba(253,255,252, 0.8);
+  --dilute-white: rgba(253,255,252, 0.5);
+  --celestial-grey: rgba(191,193,195, 1);
+  --yellow: #EDF67D;
+  --sun-accent: #FFD400;
+}
+
+:root {
+  --deep-blue: #1E3888;
+  --lake-blue: #387D7A;
+  --lake-green: #0D5D56;
+  --swamp-green: #339989;
+  --lake-main-color: rgba(56, 125, 122,1);
+  --lake-accent-color: rgba(74, 143, 231, 0.3);
+}
+
+:root {
+  --title-color: var(--ice-blue);
+  --button-color: var(--india-green);
+}
+
+.title {
+  color: var(--title-color);
+  text-align: center;
+  font-size: 5vw;
+}
+
+button {
+  margin: auto;
+  background-color: var(--button-color);
+  color: var(--title-color);
+  border-radius: 5px;
+  border: none;
+  padding: 6px;
+  width: min-content;
+  font-weight: bold;
+}
+
+#time_change {
+  float: right;
+}
+
+.control_bar {
+  display: flex;
+  padding: 1em;
+  position: sticky;
+  bottom: 0px;
+  background-color: var(--translucent);
+}
+
+.cardbox, .card {
+  border: 3px solid var(--title-color);
+  border-radius: 5vw;
+}
+
+.cardbox {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 1.4em;
+  padding: 1em;
+  background-color: var(--dilute-white);
+}
+
+.card {
+  max-height: 100vw;
+  margin: 0.7em;
+  overflow: hidden;
+  position: relative;
+}
+.card img {
+  width: 100%;
+  margin-bottom: -5px;
+}
+
+.productText {
+  position: absolute;
+  width: 90%;
+  bottom: 0px;
+  background-color: var(--translucent);
+  color: var(--button-color);
+  padding: 10px 20px;
+}
+
+@media only screen and (min-width: 600px) {
+  .control_bar {
+    position: relative;
+    background-color: transparent;
+  }
+
+  .cardbox, .card {
+    border-radius: 20px;
+  }
+
+  .cardbox {
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 0px;
+  }
+
+  .card {
+    max-height: 50vw;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .cardbox {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .card {
+    max-height: 30vw;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .cardbox {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .card {
+    max-height: 20vw;
+  }
+}
+body {
+  background: linear-gradient(var(--zenith), var(--crown-sky), var(--middling-sky), var(--bottom-sky));
+  background-repeat: no-repeat;
+  position: relative;
+  background-size: 100%;
+  margin: 0px;
+}
+
+.wrapper {
+  padding: 0px;
+  padding-top: 30px;
+  z-index: 150;
+  background-color: transparent;
+  position: relative;
+  max-width: 100%;
+}
+
+#sky {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin-top: -40px;
+  z-index: -100;
+}
+
+#lake {
+  width: 100%;
+  height: 30%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  z-index: -20;
+  background: linear-gradient(var(--lake-accent-color), var(--lake-main-color));
+}
+
+#air {
+  height: 100%;
+  overflow: hidden;
+}
+
+/*# sourceMappingURL=style.css.map */

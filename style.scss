@@ -1,0 +1,47 @@
+@use "_sky_tones.scss";
+@use "_plants.scss";
+@use "_sky_and_lights.scss";
+@use "_water_colors.scss";
+@use "_controls.scss";
+@use "_animals.scss";
+
+body {
+  background: linear-gradient(var(--zenith), var(--crown-sky), var(--middling-sky), var(--bottom-sky));
+  background-repeat: no-repeat;
+  position: relative;
+  background-size: 100%;
+  margin: 0px;
+}
+
+.wrapper {
+  padding: 0px;
+  padding-top: 30px;
+  z-index: 150;
+  background-color: transparent;
+  position: relative;
+  max-width: 100%;
+}
+
+#sky {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin-top: -40px;
+  z-index: -100;
+}
+
+#lake {
+  width: 100%;
+  height: 30%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  z-index: -20;
+  background: linear-gradient(var(--lake-accent-color), var(--lake-main-color));
+}
+
+#air {
+  height: 100%;
+  overflow: hidden;
+}
+

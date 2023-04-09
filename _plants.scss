@@ -1,0 +1,69 @@
+:root {
+    --dark-plant: #0C8346;
+    --india-green: #358600;
+    --plant: #329F5B;
+    --bud-green: #8CDB4A;
+    --vivid-plant: #2BC016;
+    --rich-plant: #29B541;
+    --water-plant: #26A96C;
+    --plant-bud: #5FAD56;
+}
+
+@mixin petal-shape {
+    display: block;
+    height: 50px;
+    width: 50px;
+    border-radius: 10% 80px 25px 80px;
+    transform-origin: bottom right;
+    opacity: 0.9;
+    content: '';
+}
+
+      
+.flower {
+    margin: 50px;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    transform: rotate(45deg);
+    --color: var(--bright-pink);
+    &__center {
+      @include petal-shape;
+      background: var(--color);
+      position: absolute;
+      transform: rotate(-22.5deg);
+      &::before {
+        @include petal-shape;
+        background: var(--color);
+        transform: rotate(45deg);
+      }
+    }
+    &__petal {
+      position: absolute;
+      background: var(--color);
+      @include petal-shape;
+      &::before, &::after {
+        background: var(--color);
+        transform: rotate(-45deg);
+        @include petal-shape;
+        position: absolute;
+        animation: blooming 10s ease-in-out infinite;
+      }
+      &::after {
+          transform: rotate(45deg);
+      }
+    }
+    .pausable {
+      &::before,&::after {
+        animation-play-state: paused;
+      }
+    }
+  }
+
+@keyframes blooming {
+  0% { };
+  50% {
+    transform: rotate(0);
+  }
+  100% { }
+}
